@@ -31,7 +31,7 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp32dev' >>platformio.ini
-        echo 'build_flags = ${env:esp32dev.build_flags} -D WLED_DISABLE_LOXONE -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D CLIENT_SSID='\''"NWLAN"'\'' -D CLIENT_PASS='\''"35315306393061753743"'\'' -D USERMOD_MULTI_RELAY -D USERMOD_PWM_OUTPUTS' >>platformio.ini
+        echo 'build_flags = ${env:esp32dev.build_flags} -D WLED_DISABLE_LOXONE -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D CLIENT_SSID='\''"NWLAN"'\'' -D CLIENT_PASS='\''"35315306393061753743"'\'' -D USERMOD_MULTI_RELAY -D USERMOD_PIRSWITCH -D USERMOD_PWM_OUTPUTS' >>platformio.ini
         
         pio run -e custom_build || pio run -e custom_build
     - name: Copy Files
